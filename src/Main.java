@@ -10,7 +10,7 @@ public class Main {
     {
         String s = "leetcode";
         for (int i = 0 ; i < s.toCharArray().length ; i++) {
-            hmap.put(i, hmap.getOrDefault(i, 0) + 1);
+            hmap.put(s.charAt(i), hmap.getOrDefault(s.charAt(i), 0) + 1);
         }
 
         for (int i = 0 ; i < s.toCharArray().length ; i++) {
