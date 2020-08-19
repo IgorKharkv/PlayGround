@@ -1,34 +1,26 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.SortedMap;
-import java.util.TreeMap;
+import java.util.List;
 
 public class Main {
 
     public static HashMap<Character, Integer> hmap = new HashMap();
 
-    //check for number prime or not
-    static boolean isPrime(int n) {
-        //check if n is a multiple of 2
-        if (n % 2 == 0) return false;
-        //if not, then just check the odds
-        for (int i = 3; i <= Math.sqrt(n); i += 2) {
-            if (n % i == 0)
-                return false;
-        }
-        return true;
-    }
-
-        public static void main(String args[])
+    public static void main(String args[])
     {
-        int number = 10;
-        ArrayList<Integer> primes = new ArrayList<>();
-        for (int i = 1 ; i < 10 ; i++) {
-            if (isPrime(i)) {
-                primes.add(i);
+        int[] nums = {1,2,3,4,5,6,7,8,9,10,11,12,13,14};
+        List<List<Integer>> output = new ArrayList();
+        output.add(new ArrayList<Integer>());
+
+        for (int num : nums) {
+            List<List<Integer>> newSubsets = new ArrayList();
+            for (List<Integer> curr : output) {
+                newSubsets.add(new ArrayList<Integer>(curr){{add(num);}});
+            }
+            for (List<Integer> curr : newSubsets) {
+                output.add(curr);
             }
         }
-
-        System.out.println(primes);
+        System.out.println(output);
     }
 }
