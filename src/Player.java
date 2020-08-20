@@ -1,14 +1,11 @@
 public class Player extends Human implements Moveable {
 
     Player() {
-        System.out.println("YEA");
+        System.out.println("TEST");
     }
 
     public void display() {
-        System.out.println("Geek");
+        System.out.println("TEST2");
     }
 
-    public void shit() {
-        System.out.println("Nigga");
-    }
 }
